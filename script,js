@@ -1,0 +1,51 @@
+// Variables
+const numOfMoves = document.getElementById("num-of-moves");
+const timePassed = document.getElementById("time");
+const startButton = document.getElementById("start");
+const gameContainer = document.querySelector("game-container");
+const score = document.getElementById("score");
+const scoreContainer = document.querySelector("score-container");
+
+const cards;
+const turn;
+const firstCard = false;
+const secondCard = false;
+
+const pics = [
+    {name: "messi", image: "assets/images/messi.jpg"},
+    {name: "ronaldo", image: "assets/images/ronaldo.jpg"},
+    {name: "lloris", image: "assets/images/lloris.jpg"},
+    {name: "neymar", image: "assets/images/neymar.jpg"},
+    {name: "pedri", image: "assets/images/pedri.png"},
+    {name: "rashford", image: "assets/images/rashford.jpg"},
+    {name: "son", image: "assets/images/son.jpg"},
+    {name: "dejong", image: "assets/images/dejong.jpg"},
+];
+
+//Starting time 
+let seconds = 0, minutes = 0;
+
+// Attempts and win count
+let moveCount = 0, winCount = 0;
+
+// Timer
+const stopWatch = () => {
+    seconds += 1;
+    if (seconds >= 60){
+        minutes += 1;
+        seconds = 0;
+    }
+
+
+// Time at start of game
+    let secondsPassed = seconds < 10 ? `0${seconds}` : seconds;
+    let minutesPassed = seconds < 10 ? `0${minutes}` : minutes;
+    timePassed.innerHTML = `<span>Time</span>`{minutesPassed}:${secondsPassed};
+};
+
+// Logging num of moves
+const moveCounter = () => {
+    moveCount += 1;
+    numOfMoves.innerHTML = `<span>Moves: </span>${moveCount}`
+
+}

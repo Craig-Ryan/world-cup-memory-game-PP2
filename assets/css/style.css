@@ -28,3 +28,9 @@ body {
     top: 50%;
     width: 60%;
 }
+
+.game-container {
+    display: grid;
+    position: relative;
+    width: 100%;
+}
